@@ -1,4 +1,4 @@
-defmodule ClockWeb.PageController do
+defmodule ClockWeb.TimerController do
   use ClockWeb, :controller
 
   def index(conn, _params) do
