@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :clock, Clock.Repo,
-  username: "postgres",
-  password: "postgres",
+  # username: "postgres",
+  # password: "postgres",
   database: "clock_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

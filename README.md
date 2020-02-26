@@ -18,3 +18,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+## Notes
+
+Depending on how you have postgres set up, you may need to uncomment/edit the
+username and password in `config/dev.exs` (and `config/test.exs` for the test
+environment).

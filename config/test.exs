@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :clock, Clock.Repo,
-  username: "postgres",
-  password: "postgres",
+  # username: "postgres",
+  # password: "postgres",
   database: "clock_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
