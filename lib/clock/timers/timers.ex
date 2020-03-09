@@ -1,5 +1,7 @@
 defmodule Clock.Timers do
+  alias Clock.{Repo, Timer}
+
   def all do
-    ["This is not a timer"]
+    Repo.all(Timer)
   end
 end
