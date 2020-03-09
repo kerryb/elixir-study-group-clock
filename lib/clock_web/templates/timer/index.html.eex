@@ -1,5 +1,6 @@
+<%= link "New timer", to: Routes.timer_path(@conn, :new) %>
 <ul>
   <%= for timer <- @timers do %>
-    <li><%= timer %></li>
+    <li><%= timer.seconds %> seconds</li>
   <% end %>
 </ul>

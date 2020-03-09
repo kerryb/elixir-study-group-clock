@@ -16,7 +16,7 @@ defmodule ClockWeb.Router do
   scope "/", ClockWeb do
     pipe_through :browser
 
-    get "/", TimerController, :index
+    resources "/", TimerController, only: [:index, :new, :create]
   end
 
   # Other scopes may use custom stacks.

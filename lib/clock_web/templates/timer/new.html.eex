@@ -1,0 +1,5 @@
+<%= form_for @timer, Routes.timer_path(@conn, :create), fn f -> %>
+  <label><span>Seconds:</span>
+    <%= text_input f, :seconds %>
+  </label>
+<% end %>
