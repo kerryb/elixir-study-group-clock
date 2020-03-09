@@ -4,4 +4,8 @@ defmodule Clock.Timers do
   def all do
     Repo.all(Timer)
   end
+
+  def create(changeset) do
+    Repo.insert(changeset)
+  end
 end

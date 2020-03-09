@@ -2,4 +2,6 @@
   <label><span>Seconds:</span>
     <%= text_input f, :seconds %>
   </label>
+  <%= error_tag f, :seconds %>
+  <%= submit "Create" %>
 <% end %>
