@@ -8,6 +8,12 @@ defmodule ClockWeb.TimerController do
     |> render("index.html")
   end
 
+  def show(conn, %{"id" => id}) do
+    conn
+    |> assign(:timer, Timers.get(id))
+    |> render("show.html")
+  end
+
   def new(conn, _params) do
     conn
     |> assign(:timer, %Timer{} |> Timer.changeset())

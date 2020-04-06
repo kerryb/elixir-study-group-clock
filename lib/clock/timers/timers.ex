@@ -5,6 +5,10 @@ defmodule Clock.Timers do
     Repo.all(Timer)
   end
 
+  def get(id) do
+    Repo.get(Timer, id)
+  end
+
   def create(changeset) do
     Repo.insert(changeset)
   end
