@@ -3,7 +3,7 @@
   <%= for timer <- @timers do %>
     <li>
       <%= timer.seconds %> seconds
-      <%= link "Delete", to: Routes.timer_path(@conn, :delete, timer.id), method: :delete, class: "button", confirm: "Are you sure?" %>
+      <%= link "Delete", to: Routes.timer_path(@conn, :delete, timer.id), method: :delete, class: "button", data: [confirm: "Are you sure?"] %>
     </li>
   <% end %>
 </ul>
