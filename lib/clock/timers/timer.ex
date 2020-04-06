@@ -10,5 +10,6 @@ defmodule Clock.Timer do
     timer
     |> cast(params, [:seconds])
     |> validate_required(:seconds)
+    |> unique_constraint(:seconds)
   end
 end
