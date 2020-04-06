@@ -28,4 +28,16 @@ defmodule ClockWeb.TimerController do
         |> render("new.html")
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    case Timers.delete(id) do
+      {:ok, _} ->
+        conn |> redirect(to: "/")
+
+      {:error, timer} ->
+        conn
+        |> put_flash(:error, "Failed to delete timer")
+        |> redirect(to: "/")
+    end
+  end
 end

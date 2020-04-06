@@ -8,4 +8,8 @@ defmodule Clock.Timers do
   def create(changeset) do
     Repo.insert(changeset)
   end
+
+  def delete(id) do
+    Repo.get(Timer, id) |> Repo.delete()
+  end
 end
