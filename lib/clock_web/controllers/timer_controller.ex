@@ -15,7 +15,6 @@ defmodule ClockWeb.TimerController do
   end
 
   def create(conn, %{"timer" => params}) do
-    IO.inspect(params)
     timer = %Timer{} |> Timer.changeset(params)
 
     case Timers.create(timer) do
