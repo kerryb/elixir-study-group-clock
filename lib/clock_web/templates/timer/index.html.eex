@@ -1,6 +1,9 @@
 <%= link "New timer", to: Routes.timer_path(@conn, :new) %>
 <ul>
   <%= for timer <- @timers do %>
-    <li><%= timer.seconds %> seconds</li>
+    <li>
+      <%= timer.seconds %> seconds
+      <%= link "Delete", to: Routes.timer_path(@conn, :delete, timer.id), method: :delete, class: "button", confirm: "Are you sure?" %>
+    </li>
   <% end %>
 </ul>
