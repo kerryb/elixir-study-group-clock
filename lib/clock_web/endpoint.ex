@@ -7,12 +7,14 @@ defmodule ClockWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_clock_key",
-    signing_salt: "a5LBIEvJ"
+    signing_salt: "U1ifOhvL"
   ]
 
   socket "/socket", ClockWeb.UserSocket,
     websocket: true,
     longpoll: false
+
+  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -30,7 +32,12 @@ defmodule ClockWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :clock
   end
+
+  plug Phoenix.LiveDashboard.RequestLogger,
+    param_key: "request_logger",
+    cookie_key: "request_logger"
 
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]

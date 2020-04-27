@@ -13,10 +13,10 @@ config :clock,
 # Configures the endpoint
 config :clock, ClockWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "6HtYg0HESXJzqHFXYGy/AMsvNHSDgYocNgYcPVDqk3HOyEfdsJaEdhPrS37kQGdq",
-  render_errors: [view: ClockWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Clock.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "w/HpPyi0"]
+  secret_key_base: "kCOmtYM6es7B/23wL6zTSVRVKc6Qjo08zpmZkTQN7sYmcs5Lj1BAPhXvjdNWeALB",
+  render_errors: [view: ClockWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Clock.PubSub,
+  live_view: [signing_salt: "L2LSHm+/"]
 
 # Configures Elixir's Logger
 config :logger, :console,

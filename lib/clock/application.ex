@@ -6,14 +6,17 @@ defmodule Clock.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
     children = [
       # Start the Ecto repository
       Clock.Repo,
-      # Start the endpoint when the application starts
+      # Start the Telemetry supervisor
+      ClockWeb.Telemetry,
+      # Start the PubSub system
+      {Phoenix.PubSub, name: Clock.PubSub},
+      # Start the Endpoint (http/https)
       ClockWeb.Endpoint
-      # Starts a worker by calling: Clock.Worker.start_link(arg)
-      # {Clock.Worker, arg},
+      # Start a worker by calling: Clock.Worker.start_link(arg)
+      # {Clock.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
