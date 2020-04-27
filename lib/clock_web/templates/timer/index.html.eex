@@ -2,7 +2,7 @@
 <ul>
   <%= for timer <- @timers do %>
     <li>
-      <%= link "#{timer.seconds} seconds", to: Routes.timer_path(@conn, :show, timer.id) %>
+      <%= link "#{timer.seconds} seconds", to: Routes.live_path(@conn, ClockWeb.TimerLive, timer.id) %>
       &nbsp;
       <%= link "Delete", to: Routes.timer_path(@conn, :delete, timer.id), method: :delete, class: "button", data: [confirm: "Are you sure?"] %>
     </li>
